@@ -1,0 +1,46 @@
+<!-- template import from base.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h2 >MY TODOS</h2>
+  <table class="table table-hover">
+    <thead>
+      <!-- Check list is empty or not -->
+      {% if alltodo|length==0 %}
+      <div class="alert alert-dark text-center" role="alert">
+        Add your first todo now!
+      </div>
+      
+      {% else %}
+      <tr>
+        <th scope="col">SNo.</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+      </tr>
+      
+    </thead>
+    
+    <tbody >
+      <!-- Show list of all the completed todo -->
+      {% for todo in alltodo %}
+      <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{todo.title}}</td>
+        <td>{{todo.desc}}</td>
+        <td>
+          <a href="/api/todo/complete/{{todo.id}}" class="btn btn-outline-success btn-sm mx-1"  role="button">Completed</a>
+          <a href="/api/todo/update/{{todo.id}}" class="btn btn-outline-info btn-sm mx-1"  role="button">Update</a>
+          <a href="/api/todo/delete/{{todo.id}}" class="btn btn-outline-dark btn-sm mx-1"  role="button">Delete</a>
+        </td>
+      </tr>
+      
+      {% endfor %}
+      {% endif %}
+      
+    </tbody>
+  </table>
+</div>    
+{% endblock content %}

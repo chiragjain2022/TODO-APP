@@ -1,0 +1,32 @@
+<!-- template import from base.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Add style for form section -->
+{% block styling %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='form.css') }}">
+{% endblock %}
+
+<!-- Create a form to get title and description -->
+<div class="container">
+  <div class="form-container">
+    <h2 class="form-title">Update Todo</h2>
+    
+    <form action='/api/todo/update/{{todo.id}}', method='POST'>
+      <div class="form-group">
+        <label class="form-label" for="title">Title:</label>
+        <input type="text" class="form-control" id="title" value="{{todo.title}}" name="title" placeholder="Enter title" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="desc">Description:</label>
+        <input type="text" class="form-control" id="desc" value="{{todo.desc}}" name="desc" placeholder="Enter title"  required>
+      </div>
+      <button type="submit" class="btn btn-primary submit-btn">Update</button>
+    </form>
+    
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+body {
+      background-color: #f0f0f0;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #333;
+    }
+    .navbar-brand:hover {
+      color: #222;
+    }
+    .navbar-nav .nav-link {
+      color: #333;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #222;
+    }
+    .add-task-btn {
+      color: #fff;
+      background-color: #2196f3;
+      border-color: #2196f3;
+    }
+    .add-task-btn:hover {
+      background-color: #0d8bf2;
+      border-color: #0d8bf2;
+    }
+    .completed-task {
+      color: #777;
+    }
+    .completed-task:hover {
+      color: #555;
+    }
+    .container {
+      margin-top: 50px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
